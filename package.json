@@ -1,12 +1,12 @@
 {
-  "name": "ecommerce",
+  "name": "distribuidora",
   "description": "webapp",
-  "version": "0.1.0",
+  "version": "1.0",
   "author": "Jesus Lara Mendez",
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GsusLara/ecomerseClient.git "
+    "url": "git+https://github.com/GsusLara/Ecommerce-Distribuidora.git "
   },
   "scripts": {
     "dev": "next dev",

@@ -1,4 +1,8 @@
 import Link from "next/link";
+import { useState } from "react";
+import Modal from "react-bootstrap/Modal";
+import Form from "react-bootstrap/Form";
+import { Button } from "react-bootstrap";
 
 export default function Navbar() {
     return (
@@ -36,7 +40,7 @@ export default function Navbar() {
                 <div className="row justify-content-center">
                     <div className="col-10">
                         <form className="d-flex ">
-                            <input className="form-control text-center me-2" type="search" placeholder="Buscar" aria-label="Search" />
+                            <input className="form-control text-center me-2" type="search" placeholder="Buscar producto" aria-label="Search" />
                             <button className="btn btn-light botonBusqueda" type="submit"><i className="fas fa-search"></i></button>
                         </form>
                     </div>
@@ -47,7 +51,76 @@ export default function Navbar() {
 }
 
 const Cuenta = () => {
+    const [login, setlogin] = useState(false);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const loginShow = () => setlogin(true);
+    const loginClose = () => setlogin(false);
+    const validateForm = () => {
+		return email.length > 0 && password.length > 0;
+	};
+    const validarUser = (user, password) => {
+		if (email && password !== "") {
+			alert("bienvenido");
+            loginClose();
+		} else {
+			alert("set user and password");
+		}
+	};
     return (
-        <a className="nav-link " aria-current="page" href="#"><i className="fas fa-user"></i>{" "}Mi Cuenta</a>
+        <>
+        <a className="nav-link " aria-current="page" onClick={() => loginShow()}><i className="fas fa-user"></i>{" "}Iniciar sesión</a>
+        <Modal className="modalNav" show={login} onHide={loginClose} backdrop="static" keyboard={false} animation={false}>
+						<Modal.Header className="part">
+							<Modal.Title>¡Bienvenido!</Modal.Title>
+						</Modal.Header>
+						<Modal.Body className="part">
+							<Form className="mt-3">
+								<Form.Group size="lg" controlId="email">
+									<Form.Label>Correo electrónico</Form.Label>
+									<Form.Control
+										autoFocus
+										type="email"
+										autoComplete="email"
+										value={email}
+										onChange={e => setEmail(e.target.value)}
+										onKeyPress={e => {
+											if (e.key == "Enter") {
+												validarUser(email, password);
+											}
+										}}
+									/>
+								</Form.Group>
+								<Form.Group size="lg" controlId="password" className="mt-2">
+									<Form.Label>Contraseña</Form.Label>
+									<Form.Control
+										type="password"
+										autoComplete="password"
+										value={password}
+										onChange={e => setPassword(e.target.value)}
+										onKeyPress={e => {
+											if (e.key == "Enter") {
+												validarUser(email, password);
+											}
+										}}
+									/>
+								</Form.Group>
+							</Form>
+						</Modal.Body>
+						<Modal.Footer className="part">
+							<Button variant="btn-warning" className="btn-warning" onClick={loginClose}>
+								Close
+							</Button>
+							<Button
+								variant="btn-warning"
+								className="btn-warning"
+								type="submit"
+								disabled={!validateForm()}
+								onClick={() => validarUser(email, password)}>
+								Get in
+							</Button>
+						</Modal.Footer>
+					</Modal>
+            </>
     )
 }
