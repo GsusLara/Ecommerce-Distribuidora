@@ -1,0 +1,33 @@
+@import "~bootstrap/scss/bootstrap";
+@import "./navbar.scss";
+@import "./home.scss";
+@import "./footer.scss";
+@import "./variables.scss";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+.boxPrincipal {
+  height: calc(100vh - 74px);
+  margin-top: 74px;
+  display: grid;
+  place-items: center;
+  overflow-y: scroll;
+  padding-bottom: 5%;
+
+  &::-webkit-scrollbar{
+      display: none;
+  }
+}
+
+@media (max-width:991px){
+    .boxPrincipal {
+        height: calc(100vh - 112px);
+        margin-top: 112px;
+      }
+}

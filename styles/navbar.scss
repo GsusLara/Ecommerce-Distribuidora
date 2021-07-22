@@ -1,0 +1,26 @@
+@import "./variables.scss";
+.logo{
+    height: 3rem;
+    transition: all 0.5s;
+    &:hover{
+        transform: translateX(-15px);
+    }
+}
+.nav-link{
+    transition: all 0.5s;
+
+    &:hover{
+        font-size: 1.5rem;
+    }
+}
+.botonBusqueda{
+    color:$txColor;
+    transition: all 0.5s;
+    background: transparent;
+        border: none;
+
+    &:hover{
+        font-size: 1.5rem;
+        color:$txColor;
+    }
+}
