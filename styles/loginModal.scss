@@ -1,0 +1,64 @@
+.modal-footer,
+.modal-header {
+  border: none;
+  color: $txColor;
+}
+.modal-title {
+  text-align: center;
+  width: 100%;
+  color: $txColor;
+}
+.credenciales {
+  width: 90%;
+  border: none;
+  border-bottom: solid rgba(228, 227, 227, 0.842);
+  border-radius: 0;
+  transition: all 0.7s;
+
+  &:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-bottom: solid $decorador;
+  }
+}
+.btEntrar {
+  font-weight: bold;
+  width: 60%;
+  border: none;
+  border-radius: 9999px;
+  background: $decorador !important;
+}
+.linea {
+  text-align: center;
+  color: $txColor;
+  position: relative;
+  z-index: 1;
+
+  &:before {
+    border-top: 2px solid $decorador;
+    content: "";
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+  }
+  & span {
+    background: #ffffff;
+    padding: 0 15px;
+  }
+}
+.redSocial{
+    height: 2rem;
+}
+.btnSocial{
+    background: transparent;
+    transition: opacity .8s ease;
+
+    &:hover{
+        opacity: .2;
+    }
+}
