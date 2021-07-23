@@ -1,26 +1,49 @@
 @import "./variables.scss";
-.logo{
-    height: 3rem;
-    transition: all 0.5s;
-    &:hover{
-        transform: translateX(-15px);
-    }
+.logo {
+  height: 3rem;
+  transition: all 0.5s;
+  &:hover {
+    transform: translateX(-15px);
+  }
 }
-.nav-link{
-    transition: all 0.5s;
-
-    &:hover{
-        font-size: 1.5rem;
-    }
+nav {
+  background-image: $bread;
+  background-size: 500px;
+  background-repeat: repeat-x;
+  background-position: 0 130%;
+  background-color: $bg-strong;
+  font-family: "Source Sans Pro", sans-serif;
 }
-.botonBusqueda{
-    color:$txColor;
-    transition: all 0.5s;
-    background: transparent;
-        border: none;
+.navbar-toggler {
+  border: none;
+  background-color: $bg-strong;
+}
+.nav-link {
+  color: $txWhite !important;
+  background-color: $bg-strong;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  transition: all 0.5s ease;
 
-    &:hover{
-        font-size: 1.5rem;
-        color:$txColor;
-    }
+  &:hover {
+    opacity: 0.2;
+  }
+}
+.botonBusqueda {
+  color: $txWhite;
+  background-color: $bg-strong;
+  background: transparent;
+  border: none;
+  transition: all 0.5s ease;
+  
+
+  &:hover {
+    opacity: 0.2;
+  }
+}
+
+
+@media (max-width:991px){
+    
 }
