@@ -2,6 +2,7 @@ import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
+import { logginFacebook } from "./clientes";
 
 export default function LoginModal() {
     const [login, setlogin] = useState(false);
@@ -20,6 +21,11 @@ export default function LoginModal() {
             alert("set user and password");
         }
     };
+    const faceClick = ()=>{
+        logginFacebook().then(user=>{
+            console.log(user)})
+        .catch(err=>{console.log(err)})
+    };
     return (
         <>
             <a className="nav-link " aria-current="page" onClick={() => loginShow()}><i className="fas fa-user"></i>{" "}Iniciar sesión</a>
@@ -27,8 +33,10 @@ export default function LoginModal() {
                 <Modal.Header>
                     <button type="button" className="btn-close" onClick={loginClose} aria-label="Close"></button></Modal.Header>
                 <Modal.Body>
-                    <Modal.Title>¡Bienvenido!</Modal.Title>
-                    <Form className="text-center mt-5">
+                    <Modal.Title>
+                    <img src="/logo_t.jpg" alt="distribuidora diamasa" className="logomodal" />
+                    </Modal.Title>
+                    <Form className="text-center mt-3">
                         <Form.Group size="lg" controlId="email">
                             <Form.Control
                                 className="credenciales mx-auto"
@@ -61,18 +69,18 @@ export default function LoginModal() {
                             />
                         </Form.Group>
                         <Button
-                            className="mt-5 btEntrar"
+                            className="mt-4 btEntrar"
                             variant="success"
                             type="submit"
                             disabled={!validateForm()}
                             onClick={() => validarUser(email, password)}>
                             Entrar
                         </Button>
-                        <Form.Group size="lg" className="mt-5 text-center">
+                        <Form.Group size="lg" className="mt-3 text-center">
                             <p className="linea"><span>O inicia sesion con tu red</span></p>
                             <div className="container mt-2">
                                 <button type="button" className="btn btnSocial pr-3"><img src="/google.png" className="redSocial" alt="google" />{" "}Google</button>
-                                <button type="button" className="btn btnSocial pl-3"><img src="/facebook.png" className="redSocial" alt="facebook" />{" "}Facebook</button>
+                                <button type="button" className="btn btnSocial pl-3" onClick={()=>faceClick()}><img src="/facebook.png" className="redSocial" alt="facebook" />{" "}Facebook</button>
                             </div>
                         </Form.Group>
                     </Form>

@@ -5,8 +5,11 @@
 }
 .modal-title {
   text-align: center;
-  width: 100%;
-  color: $txColor;
+  // width: 100%;
+  // color: $txColor;
+}
+.logomodal{
+ width: 45%;
 }
 .credenciales {
   width: 90%;
@@ -18,7 +21,7 @@
   &:focus {
     -webkit-box-shadow: none;
     box-shadow: none;
-    border-bottom: solid $decorador;
+    border-bottom: solid $bg-strong;
   }
 }
 .btEntrar {
@@ -26,7 +29,7 @@
   width: 60%;
   border: none;
   border-radius: 9999px;
-  background: $decorador !important;
+  background: $bg-strong !important;
 }
 .linea {
   text-align: center;
@@ -35,7 +38,7 @@
   z-index: 1;
 
   &:before {
-    border-top: 2px solid $decorador;
+    border-top: 2px solid $bg-strong;
     content: "";
     margin: 0 auto;
     position: absolute;

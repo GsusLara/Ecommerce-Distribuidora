@@ -7,7 +7,7 @@ export default function Navbar() {
 			<div className="container" >
 				<Link href="/">
 					<a className="navbar-brand">
-						<img src="/logo.png" alt="distribuidora diamasa" className="logo" />
+						<img src="/logo.jpg" alt="distribuidora diamasa" className="logo" />
 					</a>
 				</Link>
 				<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,7 +35,7 @@ export default function Navbar() {
 				<div className="row justify-content-center">
 					<div className="col-10">
 						<form className="d-flex ">
-							<input className="form-control text-center me-2" type="search" placeholder="Buscar producto" aria-label="Search" />
+							<input className="form-control text-center me-2 espacioBusqueda" type="search" placeholder="Buscar producto" aria-label="Search" />
 							<button className="btn btn-light botonBusqueda" type="submit"><i className="fas fa-search"></i></button>
 						</form>
 					</div>

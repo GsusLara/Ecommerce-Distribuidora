@@ -10,7 +10,7 @@ nav {
   background-image: $bread;
   background-size: 500px;
   background-repeat: repeat-x;
-  background-position: 0 130%;
+  background-position: 0 100%;
   background-color: $bg-strong;
   font-family: "Source Sans Pro", sans-serif;
 }
@@ -21,29 +21,39 @@ nav {
 .nav-link {
   color: $txWhite !important;
   background-color: $bg-strong;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
   transition: all 0.5s ease;
 
   &:hover {
-    opacity: 0.2;
+    opacity: 0.1;
   }
+}
+.espacioBusqueda{
+  background:$txWhite;
+  color: $bg-strong;
+  border: none;
 }
 .botonBusqueda {
   color: $txWhite;
-  background-color: $bg-strong;
-  background: transparent;
+  background: $bg-strong;
   border: none;
   transition: all 0.5s ease;
   
 
   &:hover {
-    opacity: 0.2;
+    opacity: 0.1;
   }
 }
 
 
 @media (max-width:991px){
-    
+  .nav-link {
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  nav {
+    background-size: 500px;
+    background-position: 0 130%;
+  }
+
 }

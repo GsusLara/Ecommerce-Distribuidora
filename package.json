@@ -1,7 +1,7 @@
 {
   "name": "distribuidora",
   "description": "webapp",
-  "version": "1.0",
+  "version": "1.0.0",
   "author": "Jesus Lara Mendez",
   "license": "ISC",
   "repository": {
@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.0.2",
+    "firebase": "^8.8.0",
     "jquery": "^3.6.0",
     "next": "11.0.1",
     "next-images": "^1.8.1",
