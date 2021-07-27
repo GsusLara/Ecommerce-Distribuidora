@@ -2,7 +2,9 @@ import { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import Form from "react-bootstrap/Form";
 import { Button } from "react-bootstrap";
-import { logginFacebook } from "./clientes";
+import {FacebookProvider, GoogleProvider} from "./fireProvider"
+import SocialMediaAuth from "./fireAutentication";
+
 
 export default function LoginModal() {
     const [login, setlogin] = useState(false);
@@ -21,10 +23,9 @@ export default function LoginModal() {
             alert("set user and password");
         }
     };
-    const faceClick = ()=>{
-        logginFacebook().then(user=>{
-            console.log(user)})
-        .catch(err=>{console.log(err)})
+    const logginClick = async(provider)=>{
+        const res = await SocialMediaAuth(provider);
+        console.log(res);
     };
     return (
         <>
@@ -79,8 +80,8 @@ export default function LoginModal() {
                         <Form.Group size="lg" className="mt-3 text-center">
                             <p className="linea"><span>O inicia sesion con tu red</span></p>
                             <div className="container mt-2">
-                                <button type="button" className="btn btnSocial pr-3"><img src="/google.png" className="redSocial" alt="google" />{" "}Google</button>
-                                <button type="button" className="btn btnSocial pl-3" onClick={()=>faceClick()}><img src="/facebook.png" className="redSocial" alt="facebook" />{" "}Facebook</button>
+                                <button type="button" className="btn btnSocial pr-3" onClick={()=>logginClick(GoogleProvider)}><img src="/google.png" className="redSocial" alt="google" />{" "}Google</button>
+                                <button type="button" className="btn btnSocial pl-3" onClick={()=>logginClick(FacebookProvider)}><img src="/facebook.png" className="redSocial" alt="facebook" />{" "}Facebook</button>
                             </div>
                         </Form.Group>
                     </Form>
