@@ -24,8 +24,8 @@ export default function LoginModal() {
         }
     };
     const logginClick = async(provider)=>{
-        const res = await SocialMediaAuth(provider);
-        console.log(res);
+        const resp = await SocialMediaAuth(provider);
+        console.log(resp);
     };
     return (
         <>
